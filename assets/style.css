@@ -1,0 +1,24 @@
+body {
+    margin: 0px;
+}
+
+header {
+    color: white;
+    background-color: blue;
+    text-align: center;
+    padding: 1px;
+}
+
+.search {
+    margin-left: 10px;
+}
+
+.display, .forecast {
+    margin-left: 300px;
+}
+
+#card {
+    margin-right:50px;
+    display: flex;
+    justify-content: space-between;
+}
