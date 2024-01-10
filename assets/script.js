@@ -25,21 +25,20 @@ var getFuture = async(lat,lon)=>{
         lat,
         lon
     }`);
-    var response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=e88ce663b1df873686a4254bb12fef6f`);
+    var futureResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=e88ce663b1df873686a4254bb12fef6f`);
     //get the body out of the response
-    var weather = await response.json();  
+    var futureWeather = await futureResponse.json();  
     //log the data
-    $(".forecast").append($(`<h1>${list.dt}</h1>`));
     var myImage = $(`<img>`);
-    myImage.attr('src', `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
-    $(".forecast").append(myImage);
-    $(".forecast").append($(`<p>Temperature: ${weather.main.temp}</p>`));
-    $(".forecast").append($(`<p>Wind: ${weather.wind.speed}</p>`));
-    $(".forecast").append($(`<p>Humidity: ${weather.main.humidity}</p>`));
-    console.log(weather);
-    console.log(weather.name);
-    console.log(weather.main.temp);
-    console.log(weather.wind.speed);
+    myImage.attr('src', `https://openweathermap.org/img/wn/${futureWeather.weather[0].icon}@2x.png`);
+    $(".current").append(myImage);
+    $(".forecast").append($(`<p>Temperature: ${futureWeather.list.main.temp}</p>`));
+    $(".forecast").append($(`<p>Wind: ${futureWeather.list.wind.speed}</p>`));
+    $(".forecast").append($(`<p>Humidity: ${futureWeather.list.main.humidity}</p>`));
+    console.log(futureWeather);
+    console.log(futureWeather.list.name);
+    console.log(futureWeather.list.main.temp);
+    console.log(futureWeather.list.wind.speed);
 }
 
 var getCoordinates = async(city)=>{
@@ -60,7 +59,4 @@ $(".weather_btn").on("click",()=>{
     $(".current").empty();
     //get the coordinates
     getCoordinates($(".city").val());
-    //pass the coordinates to the current weather
-    
-    //get the weather on the page
 });
