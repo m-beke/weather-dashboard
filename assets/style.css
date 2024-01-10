@@ -5,58 +5,44 @@ body {
 header {
     color: white;
     background-color: blue;
+    background-image: linear-gradient(to right,blue,lightblue);
     text-align: center;
     padding: 1px;
 }
 
-.content {
-    display: flex;
-    flex-direction: row;
-}
-
-#search {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    padding-left:10px;
-    padding-right: 10px;
-}
-
-#search textarea {
-    padding-right: 60px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-#search button {
-  background-color: rgb(123, 121, 250);
-  color: white;
-  padding-top:5px;
-  padding-bottom: 5px;
-  border-radius: 5px;
-}
-
-#display {
-    display: flex;
-    flex-direction: column;
-    border: 2px;
-    border-style: solid;
-    margin-top: 10px;
-    padding-right: 1000px;
-    padding-left: 10px;
-    padding-bottom:10px;
-}
-
-#card {
+.container {
     display: flex;
     justify-content: space-between;
-    margin: 5px;
 }
 
-#day-1, #day-2, #day-3, #day-4, #day-5 {
-    margin: 5px;
-    background-color: gray;
-    padding-left: 5px;
-    padding-right:100px;
-    padding-bottom: 10px;
+.search {
+    margin-left: 20px;
+
 }
+
+.current {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top:50px;
+    margin-right:100px;
+    border: 2px;
+    border-style: solid;
+    padding-right: 1000px;
+    padding-bottom: 100px;
+    
+}
+
+.weather_btn {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
