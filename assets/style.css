@@ -6,35 +6,70 @@ body {
     background-repeat: no-repeat;
     color: #FFFAFA;
     font-family: "Sulphur Point", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-header {
-    color: white;
-    background-color: transparent;
-    text-align: center;
-    padding: 1px;
+    font-weight: 300;
+    font-style: normal;   
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
+    background-color: rgba(18, 18, 22, 0.6);
+    box-shadow: 0px 0px 5px 1px black;
+    max-width: 20%;
     min-height: 100vh;
+    display: flex;
+    justify-content: start;
+    margin-left: 10%;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .search {
-    background-color: rgba(18, 18, 22, 0.5);
-    min-height: 100%;
-    
+    text-align: center;
 }
 
+.search h1 {
+    padding: 10px;
+    margin-top: 5%;
+}
+
+input {
+    color: #FFFAFA;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #FFFAFA;
+}
 
 .weather_btn {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5px;
-    background-color: blue;
-    color: white;
+    margin: 10px;
+    color: #FFFAFA;
+    background-color: #120A8F;
+    border: none;
 }
 
+.current {
+    margin-top: -95%;
+}
+
+.current h1 {
+    font-size: 75px;
+}
+
+.current h2 {
+    margin-top: 45%
+}
+
+.current p {
+    font-size: 25px;
+}

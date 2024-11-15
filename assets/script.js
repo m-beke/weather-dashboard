@@ -29,7 +29,6 @@ console.log(city);
     var lon = (data[0].lon);
 
     getCurrent(lat, lon);
-    getFuture(lat, lon);
 }
 
 //listen for a click
