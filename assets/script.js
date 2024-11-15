@@ -20,27 +20,6 @@ var getCurrent = async(lat,lon)=>{
     console.log(weather.wind.speed);
 }
 
-var getFuture = async(lat,lon)=>{
-    console.log(`Forecast ${
-        lat,
-        lon
-    }`);
-    var futureResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=e88ce663b1df873686a4254bb12fef6f`);
-    //get the body out of the response
-    var futureWeather = await futureResponse.json();  
-    //log the data
-    var myImage = $(`<img>`);
-    myImage.attr('src', `https://openweathermap.org/img/wn/${futureWeather.weather[0].icon}@2x.png`);
-    $(".current").append(myImage);
-    $(".forecast").append($(`<p>Temperature: ${futureWeather.list.main.temp}</p>`));
-    $(".forecast").append($(`<p>Wind: ${futureWeather.list.wind.speed}</p>`));
-    $(".forecast").append($(`<p>Humidity: ${futureWeather.list.main.humidity}</p>`));
-    console.log(futureWeather);
-    console.log(futureWeather.list.name);
-    console.log(futureWeather.list.main.temp);
-    console.log(futureWeather.list.wind.speed);
-}
-
 var getCoordinates = async(city)=>{
 console.log(city);
     var response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=e88ce663b1df873686a4254bb12fef6f`);

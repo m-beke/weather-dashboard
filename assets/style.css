@@ -1,11 +1,18 @@
 body {
     margin: 0px;
+    height: 100%;
+    background-image: url("./images/pexels-brett-sayles-1431822.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #FFFAFA;
+    font-family: "Sulphur Point", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 header {
     color: white;
-    background-color: blue;
-    background-image: linear-gradient(to right,blue,lightblue);
+    background-color: transparent;
     text-align: center;
     padding: 1px;
 }
@@ -13,25 +20,15 @@ header {
 .container {
     display: flex;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
 .search {
-    margin-left: 20px;
-
-}
-
-.current {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin-top:50px;
-    margin-right:100px;
-    border: 2px;
-    border-style: solid;
-    padding-right: 1000px;
-    padding-bottom: 100px;
+    background-color: rgba(18, 18, 22, 0.5);
+    min-height: 100%;
     
 }
+
 
 .weather_btn {
     display: flex;
@@ -39,10 +36,5 @@ header {
     margin-top: 5px;
     background-color: blue;
     color: white;
-    border-radius: 5px;
-    padding-left:50px;
-    padding-right:50px;
-    padding-top:5px;
-    padding-bottom:5px;
 }
 
