@@ -81,7 +81,7 @@ var getWeeklyForecast = async(lat, lon) => {
 
 var getCoordinates = async(city)=>{
 console.log(city);
-    var response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=e88ce663b1df873686a4254bb12fef6f`);
+    var response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=e88ce663b1df873686a4254bb12fef6f`);
     var data = await response.json();
     // get our values
     var lat = (data[0].lat);
