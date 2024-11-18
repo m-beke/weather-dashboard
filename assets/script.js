@@ -3,13 +3,13 @@ var getCurrent = async(lat,lon)=>{
         lat,
         lon
     }`);
-    var response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=e88ce663b1df873686a4254bb12fef6f`);
+    var response = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=e88ce663b1df873686a4254bb12fef6f`);
     //get the body out of the response
     var weather = await response.json();  
     //log the data
     $(".current").append($(`<h1>${weather.name}</h1>`));
     var myImage = $(`<img>`);
-    myImage.attr('src', `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
+    myImage.attr('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
     $(".current").append(myImage);
     $(".current").append($(`<h1>${weather.main.temp}°F</h1>`));
     $(".current").append($(`<p>Wind: ${weather.wind.speed}</p>`));
@@ -24,7 +24,7 @@ var getCurrent = async(lat,lon)=>{
 var getWeeklyForecast = async(lat, lon) => {
     console.log(`In weekly forecast for ${lat}, ${lon}`);
     // Fetch 5-day weather forecast (data is provided in 3-hour intervals)
-    var response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=e88ce663b1df873686a4254bb12fef6f`);
+    var response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=e88ce663b1df873686a4254bb12fef6f`);
     var weatherData = await response.json();
     // Get today's date to filter it out from the forecast
     let today = new Date().toLocaleDateString();
@@ -66,7 +66,7 @@ var getWeeklyForecast = async(lat, lon) => {
         let avgTemp = dayForecasts[0].temp;  // Use the first temperature for now
         let avgWind = dayForecasts[0].wind;
         let description = dayForecasts[0].description;
-        let iconUrl = `https://openweathermap.org/img/wn/${dayForecasts[0].icon}@2x.png`;
+        let iconUrl = `http://openweathermap.org/img/wn/${dayForecasts[0].icon}@2x.png`;
 
         dayContainer.append($(`<img src="${iconUrl}" alt="${description}">`));
         dayContainer.append($(`<h2>${avgTemp}°F</h2>`));
@@ -81,7 +81,7 @@ var getWeeklyForecast = async(lat, lon) => {
 
 var getCoordinates = async(city)=>{
 console.log(city);
-    var response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=e88ce663b1df873686a4254bb12fef6f`);
+    var response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=e88ce663b1df873686a4254bb12fef6f`);
     var data = await response.json();
     // get our values
     var lat = (data[0].lat);
